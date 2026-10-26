@@ -4,13 +4,13 @@ from flask_cors import CORS
 from werkzeug.exceptions import HTTPException
 
 from database import (
-    FIELDS, create_db_table, delete_user, get_user_by_id,
+    FIELDS, initialize_database, delete_user, get_user_by_id,
     get_users, insert_user, update_user,
 )
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
-create_db_table()
+initialize_database()
 
 
 def validated_user(update=False):

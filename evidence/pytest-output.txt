@@ -1,0 +1,23 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-9.0.2, pluggy-1.7.0 -- C:\Users\User\AppData\Local\Programs\Python\Python313\python.exe
+rootdir: C:\Users\User\Desktop\lab7
+plugins: anyio-4.11.0
+collecting ... collected 15 items
+
+test_user_Omar_Khalil.py::test_database_created_with_initial_users_on_first_app_run PASSED [  6%]
+test_user_Omar_Khalil.py::test_insert_user PASSED                        [ 13%]
+test_user_Omar_Khalil.py::test_get_users PASSED                          [ 20%]
+test_user_Omar_Khalil.py::test_get_user_by_id PASSED                     [ 26%]
+test_user_Omar_Khalil.py::test_update_user PASSED                        [ 33%]
+test_user_Omar_Khalil.py::test_delete_user PASSED                        [ 40%]
+test_user_Omar_Khalil.py::test_api_get_user PASSED                       [ 46%]
+test_user_Omar_Khalil.py::test_api_get_users PASSED                      [ 53%]
+test_user_Omar_Khalil.py::test_api_add_user PASSED                       [ 60%]
+test_user_Omar_Khalil.py::test_api_update_user PASSED                    [ 66%]
+test_user_Omar_Khalil.py::test_api_delete_user PASSED                    [ 73%]
+tests/test_api.py::UserAPITest::test_crud_and_persistence PASSED         [ 80%]
+tests/test_api.py::UserAPITest::test_invalid_requests PASSED             [ 86%]
+tests/test_api.py::UserAPITest::test_missing_users PASSED                [ 93%]
+tests/test_api.py::UserAPITest::test_sql_text_and_cors PASSED            [100%]
+
+============================= 15 passed in 0.94s ==============================

@@ -8,3 +8,6 @@ __pycache__/
 flask-server.*
 Lab5-submission/
 tmp*/
+.pytest_cache/
+.test-tmp/
+pytest-cache-files-*/

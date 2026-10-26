@@ -6,6 +6,25 @@ from pathlib import Path
 
 FIELDS = ("name", "email", "phone", "address", "country")
 DATABASE = Path(os.environ.get("DATABASE_PATH", Path(__file__).with_name("database.db")))
+INITIAL_USERS = [dict(name="John Doe", email="jondoe@gamil.com", phone="067765434567",
+                      address="John Doe Street, Innsbruck", country="Austria")]
+
+
+def initialize_database():
+    """Create and seed the users table on first application startup only."""
+    with closing(connect_to_db()) as conn, conn:
+        exists = conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='users'").fetchone()
+        if exists:
+            return
+        conn.execute("""CREATE TABLE users (
+            user_id INTEGER PRIMARY KEY NOT NULL,
+            name TEXT NOT NULL, email TEXT NOT NULL, phone TEXT NOT NULL,
+            address TEXT NOT NULL, country TEXT NOT NULL
+        )""")
+        conn.executemany(
+            "INSERT INTO users (name, email, phone, address, country) VALUES (?, ?, ?, ?, ?)",
+            [tuple(user[field] for field in FIELDS) for user in INITIAL_USERS],
+        )
 
 
 def connect_to_db():
