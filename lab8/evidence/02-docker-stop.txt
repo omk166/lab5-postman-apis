@@ -1,0 +1,3 @@
+﻿lab8-users-1
+CONTAINER ID   IMAGE                                  COMMAND           CREATED          STATUS                                PORTS     NAMES
+1e5557eb6917   omk166/lab8-omar_khali:0.0.2-RELEASE   "python app.py"   45 seconds ago   Exited (137) Less than a second ago             lab8-users-1

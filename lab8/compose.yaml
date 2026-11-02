@@ -1,0 +1,18 @@
+services:
+  lab5:
+    build: ./lab5-app
+    image: omk166/lab8-omar_khali:0.0.1-RELEASE
+    ports:
+      - "5000:5000"
+    volumes:
+      - lab5-data:/data
+  users:
+    build: ./users-api
+    image: omk166/lab8-omar_khali:0.0.2-RELEASE
+    ports:
+      - "127.0.0.2:3000:3000"
+    volumes:
+      - users-data:/data
+volumes:
+  lab5-data:
+  users-data:
